@@ -45,7 +45,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    active_decorator (1.4.1)
+    active_decorator (1.5.1)
       activesupport
     active_model_serializers (0.10.15)
       actionpack (>= 4.1)
