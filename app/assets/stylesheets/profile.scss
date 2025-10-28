@@ -1,0 +1,40 @@
+@import 'variables';
+
+.profile {
+  &_header {
+    &_backlink {
+      float: left;
+    }
+  }
+
+  &_header:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  &_data {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+
+  &_posts {
+    img {
+    width: 100%;
+    }
+  }
+}
+
+.account_name {
+  width: 100%;
+  text-align: center;
+}
+
+.avatar {
+  text-align: center;
+  margin: 35px 0;
+}
