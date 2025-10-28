@@ -45,6 +45,8 @@ gem 'faker'
 gem 'hamlit'
 gem 'sidekiq'
 gem 'sassc-rails'
+gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'psych', '~> 3.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
