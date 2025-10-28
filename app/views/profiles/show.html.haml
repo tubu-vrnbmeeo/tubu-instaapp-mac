@@ -1,0 +1,25 @@
+.container
+  .profile_header
+    = link_to '<', :back
+    .account_name
+      = current_user.account_name
+  .avatar
+    = image_tag 'Group 5.png'
+  .profile_data
+    .profile_post 
+      .profile_post_count 
+        44
+      .profile_desc 
+        Posts
+    .profile_follower
+      .profile_follower_count 
+        110
+      .profile_desc 
+        Followers
+    .profile_following
+      .profile_following_count
+        44
+      .profile_desc 
+        Followings
+  .profile_post 
+    = image_tag 'Group 8.png'
