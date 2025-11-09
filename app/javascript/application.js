@@ -5,8 +5,10 @@ import "controllers";
 import jQuery from "jquery";
 window.$ = jQuery;
 window.jQuery = jQuery;
-// import "jquery-ujs"
-// import axios from 'axios'
+import { csrfToken } from 'rails-ujs'
+import axios from 'axios'
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener("DOMContentLoaded", () => {
   $(".avatar_image").on("click", () => {
