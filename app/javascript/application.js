@@ -1,7 +1,15 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
+import "@hotwired/turbo-rails";
+import "controllers";
 
-document.addEventListener('DOMContentLoaded', () => {
-  window.alert('loaded')
-})
+import jQuery from "jquery";
+window.$ = jQuery;
+window.jQuery = jQuery;
+// import "jquery-ujs"
+// import axios from 'axios'
+
+document.addEventListener("DOMContentLoaded", () => {
+  $(".avatar_image").on("click", () => {
+    window.alert("clicked");
+  });
+});
