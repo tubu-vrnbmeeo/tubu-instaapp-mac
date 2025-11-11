@@ -3,6 +3,6 @@ class AvatarsController < ApplicationController
   def show
     profile = current_user.profile
     avatar = profile.avatar
-    render json: avatar
+    render json: { url: rails_blob_url(avatar) }
   end
 end
