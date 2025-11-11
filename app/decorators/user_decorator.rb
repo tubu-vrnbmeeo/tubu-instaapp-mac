@@ -9,5 +9,5 @@ module UserDecorator
       'Group 5.png'
     end
   end
-  
+
 end

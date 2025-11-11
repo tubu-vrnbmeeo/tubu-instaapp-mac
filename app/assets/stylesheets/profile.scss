@@ -37,4 +37,9 @@
 .avatar {
   text-align: center;
   margin: 35px 0;
+  &_image {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+  }
 }
