@@ -13,9 +13,12 @@ window.jQuery = jQuery
 document.addEventListener("DOMContentLoaded", () => {
   $.get(`/profile/avatar`, function(response) {
     const url = response.url
-    debugger
-    $('.avatar').append(
-      `<img src=${url} class="avatar_image">`
-    )
+    if(url != 'not found') {
+        $('.avatar').append(
+          `<img src=${url} class="avatar_image">`
+        )
+    } else {
+        $('.avatar_image').removeClass('hidden')
+    }
   })
 })
