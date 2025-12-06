@@ -5,6 +5,9 @@
     .account_name
       = current_user.account_name
   .avatar
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true, class: 'hidden', id: 'image_upload_form') do |f|
+      = f.file_field :avatar, id: 'profile_picture_input'
+      = f.submit '保存'
     = image_tag 'Group 5.png', class: 'avatar_image hidden'
   .profile_data
     .profile_post

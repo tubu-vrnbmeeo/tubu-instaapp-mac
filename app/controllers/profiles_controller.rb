@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
       redirect_to profile_path, notice: 'profile updated'
     else
       flash.now[:error] = 'not updated'
-      render :edit
+      redirect_to profile_path
     end
   end
 
@@ -25,5 +25,4 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:avatar)
   end
-  
 end

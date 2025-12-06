@@ -21,4 +21,27 @@ document.addEventListener("DOMContentLoaded", () => {
         $('.avatar_image').removeClass('hidden')
     }
   })
+  .catch((error) => {
+      window.alert('error')
+    })
+
+  $(document).on('click', '.avatar_image', () => {
+    $('#profile_picture_input').trigger('click')
+  })
+
+  $('#profile_picture_input').on('change', (e) => {
+    // const formData = new FormData()
+    // formData.append('avatar', e.target.files[0])
+    // console.log(formData)
+    // axios.post(`/profile`, formData)
+    //   .then((response) => {
+    //     const url = response.data.url
+    //     $('.avatar_image').src = url
+    //   })
+    //   .catch((error) => {
+    //     window.alert('avatar not updated')
+    //   })
+    $('#image_upload_form').trigger('submit')
+
+  })
 })
