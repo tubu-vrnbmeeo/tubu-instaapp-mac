@@ -1,0 +1,14 @@
+{
+  "license": "MIT",
+  "dependencies": {
+    "@rails/request.js": "^0.0.12",
+    "@rails/webpacker": "^5.4.4",
+    "axios": "^1.13.2",
+    "jquery": "^3.7.1",
+    "rails-ujs": "^5.2.8-1"
+  },
+  "devDependencies": {
+    "@webpack-cli/serve": "^3.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

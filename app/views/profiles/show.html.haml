@@ -1,0 +1,31 @@
+.container
+  .profile_header
+    .profile_header_backlink
+      = link_to '<', :back
+    .account_name
+      = current_user.account_name
+  .avatar
+    = form_with(model: current_user.prepare_profile, url: profile_path, turbo_method: 'put', local: true, class: 'hidden', id: 'image_upload_form') do |f|
+      = f.file_field :avatar, id: 'profile_picture_input'
+      = f.submit '保存'
+    = image_tag 'Group 5.png', class: 'avatar_image hidden'
+  .profile_data
+    .profile_post
+      .profile_post_count
+        44
+      .profile_desc
+        Posts
+    .profile_follower
+      .profile_follower_count
+        110
+      .profile_desc
+        Followers
+    .profile_following
+      .profile_following_count
+        44
+      .profile_desc
+        Followings
+  .profile_posts
+    = image_tag 'Group 8.png'
+
+= javascript_import_module_tag 'profile'
