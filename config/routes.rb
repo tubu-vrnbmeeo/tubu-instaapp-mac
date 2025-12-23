@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resource :profile, only: [:show, :edit, :update] do
-    resource :avatar, only: [:show]
+  resource :profile, only: [:show, :edit, :update]
+
+  namespace :api, defaults: { format: :json } do
+    scope '/profile' do
+      resource :avatar, only: [:show]
+    end
   end
 end

@@ -1,4 +1,4 @@
-class AvatarsController < ApplicationController
+class Api::AvatarsController < Api::ApplicationController
   before_action :authenticate_user!
   def show
     if current_user.profile&.avatar&.attached?

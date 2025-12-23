@@ -5,7 +5,7 @@ import $ from "jquery";
 export const displayAvatar = async () => {
   const request = new FetchRequest(
     'get',
-    '/profile/avatar'
+    '/api/profile/avatar'
   );
   try {
     const response = await request.perform();
