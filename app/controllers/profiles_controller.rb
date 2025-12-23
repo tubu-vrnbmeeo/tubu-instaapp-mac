@@ -10,14 +10,13 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = current_user.prepare_profile
-    @profile.assign_attributes(profile_params)
-    if @profile.save
-      redirect_to profile_path, notice: 'profile updated'
-    else
-      flash.now[:error] = 'not updated'
-      redirect_to profile_path
-    end
+    profile = current_user.prepare_profile
+    profile.assign_attributes(profile_params)
+    profile.save!
+
+    avatar = current_user.profile.avatar
+    url = url_for(avatar)
+    render json: { url: url }
   end
 
 
