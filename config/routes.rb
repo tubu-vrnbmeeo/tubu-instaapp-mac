@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root to: "home#index"
+  root to: "posts#index"
 
   resource :profile, only: [:show, :edit, :update]
+  resources :posts
 
   namespace :api, defaults: { format: :json } do
     scope '/profile' do
