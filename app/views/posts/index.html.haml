@@ -1,1 +1,23 @@
-hello
+.container
+  = image_tag 'photo-camera.png'
+  - @posts.each do |post|
+    .post
+      .post_owner
+        .post_owner_avatar
+          = image_tag post.user.avatar_image
+        .post_owner_column
+          .post_owner_name
+            = post.user.account_name
+          .post_updated_time
+            3 hours ago
+      .post_images
+        = image_tag 'ex.png'
+      .post_actions
+        = image_tag 'inactive heart.png'
+        = image_tag 'comment.png'
+        = image_tag 'share.png'
+      %p.like_summary
+        Jasmin and 12,000 other liked your post
+      .post_content
+        %span.post_content_owner= post.user.account_name
+        %span= post.content

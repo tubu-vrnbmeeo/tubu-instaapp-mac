@@ -8,7 +8,7 @@
     = form_with(model: current_user.prepare_profile, url: profile_path, turbo_method: 'put', local: true, class: 'hidden', id: 'image_upload_form') do |f|
       = f.file_field :avatar, id: 'profile_picture_input'
       = f.submit '保存'
-    = image_tag 'Group 5.png', class: 'avatar_image hidden'
+    = image_tag current_user.avatar_image, class: 'avatar_image hidden'
   .profile_data
     .profile_post
       .profile_post_count
