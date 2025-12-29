@@ -11,8 +11,10 @@
             = post.user.account_name
           .post_updated_time
             3 hours ago
-      .post_images
-        = image_tag 'ex.png'
+      - if post.images.attached?
+        .post_images
+          - post.images.each do |image|
+            = image_tag image
       .post_actions
         = image_tag 'inactive heart.png'
         = image_tag 'comment.png'
@@ -22,3 +24,5 @@
       .post_content
         %span.post_content_owner= post.user.account_name
         %span= post.content
+
+= javascript_import_module_tag 'post'

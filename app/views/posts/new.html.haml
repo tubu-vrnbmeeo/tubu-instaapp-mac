@@ -2,7 +2,7 @@
   = form_with(model: @post, local: true) do |f|
     .new_post_header
       .new_post_cancel
-        = link_to 'Cancel', '#'
+        = link_to 'Cancel', :back
       .new_post_status
         Status
       .new_post_create
