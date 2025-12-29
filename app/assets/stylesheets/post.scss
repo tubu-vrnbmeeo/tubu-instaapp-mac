@@ -28,6 +28,12 @@
 
   &_images {
     margin: 11px 0;
+
+    & img {
+      height: 225px;
+      width: 320px;
+      object-fit: cover;
+    }
   }
 
   &_actions {
