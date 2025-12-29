@@ -40,8 +40,15 @@
 }
 
 .new_post {
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
   &_user {
     display: flex;
+    margin-bottom: 30px;
 
     &_avatar img {
       @extend .standard_avatar;
@@ -54,5 +61,9 @@
       font-size: 16px;
       line-height: 40px;
     }
+  }
+
+  &_content {
+    margin-bottom: 24px;
   }
 }
