@@ -1,5 +1,6 @@
 .container
-  = image_tag 'photo-camera.png'
+  = link_to new_post_path do
+    = image_tag 'photo-camera.png'
   - @posts.each do |post|
     .post
       .post_owner

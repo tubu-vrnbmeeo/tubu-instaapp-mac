@@ -1,0 +1,18 @@
+.container
+  = form_with(model: @post, local: true) do |f|
+    .new_post_header
+      .new_post_cancel
+        = link_to 'Cancel', '#'
+      .new_post_status
+        Status
+      .new_post_create
+        = f.submit 'Post'
+    .new_post_user
+      .new_post_user_avatar
+        = image_tag current_user.avatar_image
+      .new_post_user_name
+        = current_user.account_name
+    .new_post_content
+      = f.text_field :content, class: 'text'
+    .new_post_file
+      = f.file_field :images

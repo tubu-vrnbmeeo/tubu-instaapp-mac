@@ -38,3 +38,21 @@
     }
   }
 }
+
+.new_post {
+  &_user {
+    display: flex;
+
+    &_avatar img {
+      @extend .standard_avatar;
+      width: 40px;
+      height: 40px;
+      margin-right: 18px;
+    }
+
+    &_name {
+      font-size: 16px;
+      line-height: 40px;
+    }
+  }
+}
