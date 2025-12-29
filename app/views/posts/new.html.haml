@@ -13,6 +13,6 @@
       .new_post_user_name
         = current_user.account_name
     .new_post_content
-      = f.text_field :content, class: 'text'
+      = f.text_field :content, placeholder: 'What\'s on your mind?', class: 'text'
     .new_post_file
-      = f.file_field :images
+      = f.file_field :images, multiple: true
