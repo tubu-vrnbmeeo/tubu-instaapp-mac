@@ -10,7 +10,7 @@
           .post_owner_name
             = post.user.account_name
           .post_updated_time
-            3 hours ago
+            = post.updated_time
       - if post.images.attached?
         .post_images
           - post.images.each do |image|

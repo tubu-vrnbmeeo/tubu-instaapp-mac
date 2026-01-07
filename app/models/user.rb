@@ -30,8 +30,4 @@ class User < ApplicationRecord
   def prepare_profile
     profile || build_profile
   end
-
-  def avatar_image
-    profile.avatar || 'Group 5.png'
-  end
 end
