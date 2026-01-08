@@ -5,6 +5,7 @@
     %title= content_for(:title) || "Tubu Instaapp Mac"
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{content: "summary_large_image", name: "twitter:card"}/
     = csrf_meta_tags
     = csp_meta_tag
     = yield :head

@@ -1,0 +1,10 @@
+.container
+  - if @post.images.attached?
+    .post_images
+      - @post.images.each do |image|
+        = image_tag image
+  .post_content
+    %span.post_content_owner= @post.user.account_name
+    %span= @post.content
+
+= javascript_import_module_tag 'post'

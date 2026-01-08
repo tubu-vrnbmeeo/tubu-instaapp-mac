@@ -18,7 +18,8 @@
       .post_actions
         = image_tag 'inactive heart.png'
         = image_tag 'comment.png'
-        = image_tag 'share.png'
+        = link_to "https://twitter.com/share?url=#{post_url(post)}&text=#{post.content}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do
+          = image_tag 'share.png'
       %p.like_summary
         Jasmin and 12,000 other liked your post
       .post_content
