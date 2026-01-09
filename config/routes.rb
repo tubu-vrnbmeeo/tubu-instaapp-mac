@@ -26,5 +26,9 @@ Rails.application.routes.draw do
     scope '/profile' do
       resource :avatar, only: [:show]
     end
+
+    scope '/' do
+      resource :postslikes, only: [:show]
+    end
   end
 end
