@@ -16,7 +16,13 @@
           - post.images.each do |image|
             = image_tag image
       .post_actions
-        = image_tag 'inactive heart.png'
+        - if user_signed_in?
+          - if current_user.has_liked?(post)
+            = link_to post_like_path(post), data: { turbo_method: 'delete' } do
+              = image_tag 'active heart.png', class: "active_heart_post#{post.id}"
+          - else
+            = link_to post_like_path(post), data: { turbo_method: 'post' } do
+              = image_tag 'inactive heart.png', class: "inactive_heart_post#{post.id}"
         = image_tag 'comment.png'
         = link_to "https://twitter.com/share?url=#{post_url(post)}&text=#{post.content}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do
           = image_tag 'share.png'
