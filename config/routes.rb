@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resource :profile, only: [:show, :edit, :update]
-  resources :posts
+  resources :posts do
+    resource :like, only: [:create, :show, :destroy]
+  end
 
   namespace :api, defaults: { format: :json } do
     scope '/profile' do
