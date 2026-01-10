@@ -18,9 +18,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resource :profile, only: [:show, :edit, :update]
-  resources :posts do
-    resource :like, only: [:create, :destroy]
-  end
+  resources :posts
 
   namespace :api, defaults: { format: :json } do
     scope '/profile' do
@@ -29,6 +27,10 @@ Rails.application.routes.draw do
 
     scope '/' do
       resource :postslikes, only: [:show]
+    end
+
+    scope '/posts/:post_id' do
+      resource :like, only: [:create, :destroy]
     end
   end
 end
