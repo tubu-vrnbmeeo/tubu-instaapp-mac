@@ -1,0 +1,79 @@
+@import 'variables';
+
+.post {
+  margin: 36px 0;
+
+  &_owner {
+    display: flex;
+
+    &_avatar img {
+      @extend .standard_avatar;
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    &_name {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  &_updated_time {
+    font-size: 12px;
+    color: rgba(158, 158, 158, 1);
+  }
+
+  &_images {
+    margin: 11px 0;
+
+    & img {
+      height: 225px;
+      width: 320px;
+      object-fit: cover;
+    }
+  }
+
+  &_actions {
+    margin-bottom: 8px;
+
+    & img {
+      margin-right: 14px;
+    }
+  }
+
+  &_content_owner {
+    font-weight: bold;
+  }
+}
+
+.new_post {
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &_user {
+    display: flex;
+    margin-bottom: 30px;
+
+    &_avatar img {
+      @extend .standard_avatar;
+      width: 40px;
+      height: 40px;
+      margin-right: 18px;
+    }
+
+    &_name {
+      font-size: 16px;
+      line-height: 40px;
+    }
+  }
+
+  &_content {
+    margin-bottom: 24px;
+  }
+}

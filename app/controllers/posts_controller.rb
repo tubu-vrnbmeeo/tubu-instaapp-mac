@@ -1,0 +1,29 @@
+class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+  def index
+    @posts = Post.all.order('created_at DESC')
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def new
+    @post = current_user.posts.build
+  end
+
+  def create
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_path, notice: 'Posted'
+    else
+      flash.now[:error] = 'Post failured'
+      render :new
+    end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:content, images: [])
+  end
+end

@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'user';
 @import 'profile';
+@import 'post';
 
 html {
   word-spacing: 1px;
@@ -39,4 +40,26 @@ a {
 
 .hidden {
   display: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.label {
+  font-size: 11px;
+  color: $base-label-color;
+  margin-bottom: 4px;
+}
+
+.text {
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(158, 158, 158, 1);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }

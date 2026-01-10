@@ -33,9 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-<<<<<<< HEAD
-/node_modules
-=======
 
 /public/packs
 /public/packs-test
@@ -43,4 +40,3 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
->>>>>>> 274731ec3406c8b9074719edaaa03ad65009bea3

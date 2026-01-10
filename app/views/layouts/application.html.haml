@@ -5,6 +5,7 @@
     %title= content_for(:title) || "Tubu Instaapp Mac"
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{content: "summary_large_image", name: "twitter:card"}/
     = csrf_meta_tags
     = csp_meta_tag
     = yield :head
@@ -12,6 +13,8 @@
     %link{:href => "/icon.png", :rel => "icon", :type => "image/png"}/
     %link{:href => "/icon.svg", :rel => "icon", :type => "image/svg+xml"}/
     %link{:href => "/icon.png", :rel => "apple-touch-icon"}/
+    %link{:rel => "stylesheet", :type => "text/css", :href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"}
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
