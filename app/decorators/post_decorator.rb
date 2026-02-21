@@ -13,4 +13,14 @@ module PostDecorator
       "#{time_diff_second.floor} seconds ago"
     end
   end
+
+  def like_display
+    likes_count = self.likes.count
+    if likes_count > 0
+      first_user = self.likes&.first&.user&.account_name
+      "#{first_user} and #{likes_count - 1} other liked your post"
+    else
+      "#{likes_count} liked your post"
+    end
+  end
 end
