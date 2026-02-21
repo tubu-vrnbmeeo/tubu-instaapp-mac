@@ -2,7 +2,7 @@
   = link_to new_post_path do
     = image_tag 'photo-camera.png'
   - @posts.each do |post|
-    .post{ data: { post_id: post.id } }
+    .post
       .post_owner
         .post_owner_avatar
           = image_tag post.user.avatar_image
@@ -19,7 +19,8 @@
         - if user_signed_in?
           = image_tag 'active heart.png', class: "active_heart active_heart_post_#{post.id} hidden", data: {post_id: post.id}
           = image_tag 'inactive heart.png', class: "inactive_heart inactive_heart_post_#{post.id} hidden", data: {post_id: post.id}
-        = image_tag 'comment.png'
+        = link_to post_comments_path(post_id: post.id) do
+          = image_tag 'comment.png'
         = link_to "https://twitter.com/share?url=#{post_url(post)}&text=#{post.content}", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do
           = image_tag 'share.png'
       %p.like_summary

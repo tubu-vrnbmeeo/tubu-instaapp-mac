@@ -1,0 +1,20 @@
+.container
+  .comment_header
+    .comment_header_backlink
+      = link_to '<', :back
+    .comment_header_title
+      Comment
+  - @comments.each do |comment|
+    .comment
+      .comment_avatar
+        = image_tag comment.user.avatar_image
+      .comment_right_column
+        .comment_owner
+          = comment.user.account_name
+        .comment_content
+          = comment.content
+
+  .comment_form
+    = form_with(model: @comments.build, url: post_comments_path(@comments.build.post)) do |f|
+      = image_tag 'comment.png'
+      = f.text_field :comment, class: 'comment_text'
