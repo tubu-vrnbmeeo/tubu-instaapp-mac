@@ -30,6 +30,14 @@ class User < ApplicationRecord
   has_many :favorites, through: :likes, source: :post
   has_many :comments, dependent: :destroy
 
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'Group 5.png'
+    end
+  end
+
   def prepare_profile
     profile || build_profile
   end
