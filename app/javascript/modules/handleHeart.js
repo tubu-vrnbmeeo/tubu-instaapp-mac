@@ -10,13 +10,15 @@ export const getPostsLikes = async () => {
     const response = await request.perform();
     const data = await response.text;
     const postsLikes = JSON.parse(data);
-    $.each(postsLikes, (k, v) => {
-      if(v) {
-        $(`.active_heart_post_${k}`).removeClass('hidden');
-      } else {
-        $(`.inactive_heart_post_${k}`).removeClass('hidden');
-      }
-    })
+    if(postsLikes.userStatus === 'ok') {
+      $.each(postsLikes, (k, v) => {
+        if(v) {
+          $(`.active_heart_post_${k}`).removeClass('hidden');
+        } else {
+          $(`.inactive_heart_post_${k}`).removeClass('hidden');
+        }
+      })
+    }
   } catch (error) {
     window.alert('like get error');
   }

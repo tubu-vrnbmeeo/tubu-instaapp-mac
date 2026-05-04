@@ -15,9 +15,10 @@
           .comment_content
             = comment.content
 
-  .comment_form
-    = form_with(model: @comments.build, url: post_comments_path(@comments.build.post), data: { turbo: false }) do |f|
-      = image_tag 'comment.png', id: 'comment_submit'
-      = f.text_field :content, class: 'comment_text', id: "textarea"
+  - if user_signed_in?
+    .comment_form
+      = form_with(model: @comments.build, url: post_comments_path(@comments.build.post), data: { turbo: false }) do |f|
+        = image_tag 'comment.png', id: 'comment_submit'
+        = f.text_field :content, class: 'comment_text', id: "textarea"
 
 = javascript_import_module_tag 'comment'
